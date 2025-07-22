@@ -58,31 +58,51 @@
                     document.getElementById("seventh").innerHTML=`Minimum Temperature: ${(data.main.temp_min-273.15).toFixed(2)}°C`;
                 }
 
+                
+
                 switch(check){
 
                     case "Clouds":
+                        document.getElementById("sunimage").src="";
+                        document.getElementById("rain").src="";
+
                         document.body.style.backgroundImage='url("R (1).jpeg")';
+                        document.getElementById("sunimage").src="pngwing.com (2).png";
                         document.getElementById("image").src="pngwing.com (2).png";
                         document.getElementById("image2").src="pngwing.com (2).png";
                         document.getElementById("image").style.animation='clouds 15s infinite';
                         document.getElementById("image2").style.animation='cloud2 20s infinite';
+                        document.getElementById("sunimage").style.animation="cloud3 25s infinite";
                         display();
                         break;
 
                     case "Clear":
+                        document.getElementById("sunimage").src="";
+                        document.getElementById("image").src="";
+                        document.getElementById("image2").src="";
+                        document.getElementById("rain").src="";
+
+
                         document.body.style.backgroundImage='url("https://wallpaperaccess.com/full/175932.jpg")';
                         document.getElementById("sunimage").src="sun2.png";
                         document.getElementById("sunimage").style.width="150px";
-                        document.getElementById("sunimage").style.animation="sun 20s infinite";
+                        document.getElementById("sunimage").style.animation="sun 25s 1";
                         display();
                         break;
+
                     case "Rain":
+                        document.getElementById("sunimage").src="";
+                        document.getElementById("image").src="";
+                        document.getElementById("image2").src="";
+
                         document.body.style.backgroundImage='url("rbloIJQ.jpg")';
                         document.getElementById("rain").style.width="100%";
-                        document.getElementById("rain").src="pngwing.com (4).png";
+                        document.getElementById("rain").src="rain drops.png";
                         document.getElementById("rain").style.animation="rain 20s infinite";
+                        document.getElementById("rain").style.opacity="0.5";
                         display();
                         break;
+                    
 
                 };
                 console.log(data);

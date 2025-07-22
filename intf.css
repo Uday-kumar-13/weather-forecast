@@ -9,6 +9,9 @@
     flex-direction: row;
     gap:5%;
 }
+#sunimage{
+    width: 250px;
+}
 .title{
     color: white;
     margin-left: 40%;
@@ -29,7 +32,7 @@
     color: white;
     border: 3px solid rgb(22, 127, 148);
     width:50%;
-    background:local;
+    background-color: rgb(179, 178, 178, 0.6);
     box-shadow: 2px 2px 2px ;
 
 }
@@ -49,8 +52,12 @@
     from{transform: translateX(400%);}
     to{transform: translateX(-100%);}
 }
+@keyframes cloud3{
+    from{transform: translateX(210%);}
+    to{transform: translateX(-460%);}
+}
 @keyframes rain{
-    from{transform: translateY(-120%);}
+    from{transform: translateY(-80%);}
     to{transform: translateY(0%);}
 }
 @keyframes sun{
@@ -75,5 +82,5 @@
 .container{
     display: flex;
     flex-direction: row;
-    height: 450px;
+    height: 420px;
 }
