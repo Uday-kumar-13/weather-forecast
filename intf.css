@@ -1,0 +1,79 @@
+.intf{
+    /*background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20220217/pngtree-beautiful-hand-drawn-weather-forecast-illustration-background-image_947821.jpg");*/
+    background-image: url("92-925211_spectrum-wallpaper-high-definition-spectrum-hd.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.forsun{
+    display:flex;
+    flex-direction: row;
+    gap:5%;
+}
+.title{
+    color: white;
+    margin-left: 40%;
+}
+@keyframes fadein{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+.entry{
+    width:40%;
+    margin-left:38%;
+    animation-name: fadein;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
+.entry input{
+    font-size: 20px;
+    color: white;
+    border: 3px solid rgb(22, 127, 148);
+    width:50%;
+    background:local;
+    box-shadow: 2px 2px 2px ;
+
+}
+.entry input::placeholder{
+    color:rgb(255, 255, 255);
+}
+.entry button{
+    font-size: larger;
+    width: 100px;
+    height: 31px;
+}
+@keyframes clouds{
+    from{transform: translateX(100%);}
+    to{transform: translateX(-300%);}
+}
+@keyframes cloud2{
+    from{transform: translateX(400%);}
+    to{transform: translateX(-100%);}
+}
+@keyframes rain{
+    from{transform: translateY(-120%);}
+    to{transform: translateY(0%);}
+}
+@keyframes sun{
+    from{transform: translateX(200%);}
+    to{transform: translateX(0%);}
+}
+@keyframes data{
+    from{transform: translateY(100%);}
+    to{transform: translateY(0%);}
+}
+#image,#image2{
+     width:500px; 
+}
+#text{
+    padding: 3%;
+    padding-left: 6%;
+    width: 22%;
+    margin-left: 38%;
+    background-blend-mode:difference;
+    border-radius: 20%;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    height: 450px;
+}

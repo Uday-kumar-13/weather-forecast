@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="intf.css">
+         <!-- 1. https://kqkinews.com/wp-content/uploads/2023/11/WeatherPlacard.png 
+          2. https://www.4mk.com.au/wp-content/uploads/sites/16/2022/10/Weather.jpg?w=1200
+          rain: https://wallpapercave.com/wp/rbloIJQ.jpg
+          rain2 https://wallpapercave.com/wp/z50drW3.jpg
+          sunny : https://tse1.mm.bing.net/th/id/OIP.USx4ZUfV7FgfGkgrd-siaQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3
+          cloudy: https://img.freepik.com/premium-photo/beautiful-cloudy-sky_951949-733.jpg -->
+</head>
+<body class="intf">
+    <div class="forsun">
+    <h1 class="title">Weather Forecast</h1>
+    <img src="" id="sunimage">
+    </div>
+    <div class="entry">
+        <input type="text" placeholder="Enter city" class="inp" id="city">
+        <button type="submit" id="clk" onclick="weatherdata()">Next</button>
+    </div>
+    <br>
+    <div class="container">
+    <div id="text">
+        <h3 id="type"></h3>
+        <h3 id="first"></h3>
+        <h3 id="second"></h3>
+        <h3 id="third"></h3>
+        <h3 id="fourth"></h3>
+        <h3 id="fifth"></h3>
+        <h3 id="sixth"></h3>
+        <h3 id="seventh"></h3>
+    </div>
+    <img src="" id="image">
+    </div>
+    <img src="" id="image2">
+    <img src="" id="rain">
+    
+    <script>
+        async function weatherdata(){
+
+            cityname=document.getElementById("city").value;
+            APIkey=`5fc84481d6f2b6865126e89d7219c125`;
+            targeturl=`https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${APIkey}`;
+
+            try{
+                const response=await fetch(targeturl);
+                const data=await response.json();
+                let check=data.weather[0].main;
+                
+                function display(){
+                    document.getElementById("text").style.animation="data 3s 1";
+                    document.getElementById("text").style.backgroundColor="rgb(163, 162, 162)";
+                    document.getElementById("text").style.boxShadow="5px 5px rgb(98, 97, 97)";
+                    document.getElementById("first").innerHTML=`Location: ${data.name}`;
+                    document.getElementById("type").innerHTML=`Sky: ${check}`;
+                    document.getElementById("second").innerHTML=`Temperature: ${(data.main.temp-273.15).toFixed(2)}°C`;
+                    document.getElementById("third").innerHTML=`Feels like: ${(data.main.feels_like-273.15).toFixed(2)}°C`;
+                    document.getElementById("fourth").innerHTML=`Humidty: ${data.main.humidity}%`;
+                    document.getElementById("fifth").innerHTML=`Pressur: ${data.main.pressure} mb`;
+                    document.getElementById("sixth").innerHTML=`Maximum Temperature: ${(data.main.temp_max-273.15).toFixed(2)}°C`;
+                    document.getElementById("seventh").innerHTML=`Minimum Temperature: ${(data.main.temp_min-273.15).toFixed(2)}°C`;
+                }
+
+                switch(check){
+
+                    case "Clouds":
+                        document.body.style.backgroundImage='url("R (1).jpeg")';
+                        document.getElementById("image").src="pngwing.com (2).png";
+                        document.getElementById("image2").src="pngwing.com (2).png";
+                        document.getElementById("image").style.animation='clouds 15s infinite';
+                        document.getElementById("image2").style.animation='cloud2 20s infinite';
+                        display();
+                        break;
+
+                    case "Clear":
+                        document.body.style.backgroundImage='url("https://wallpaperaccess.com/full/175932.jpg")';
+                        document.getElementById("sunimage").src="sun2.png";
+                        document.getElementById("sunimage").style.width="150px";
+                        document.getElementById("sunimage").style.animation="sun 20s infinite";
+                        display();
+                        break;
+                    case "Rain":
+                        document.body.style.backgroundImage='url("rbloIJQ.jpg")';
+                        document.getElementById("rain").style.width="100%";
+                        document.getElementById("rain").src="pngwing.com (4).png";
+                        document.getElementById("rain").style.animation="rain 20s infinite";
+                        display();
+                        break;
+
+                };
+                console.log(data);
+                console.log(check);
+            }catch(error){
+                console.error(error);
+            }
+        }
+        /*document.getElementById("clk").addEventListener("click",function(){
+            weatherdata();
+        });*/
+        
+    </script>
+</body>
+</html>
