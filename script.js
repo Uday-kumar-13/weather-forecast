@@ -1,39 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="intf.css">
-</head>
-<body class="intf">
-    <div class="forsun">
-    <h1 class="title">Weather Forecast</h1>
-    <img src="" id="sunimage">
-    </div>
-    <div class="entry">
-        <input type="text" placeholder="Enter city" class="inp" id="city">
-        <button type="submit" id="clk" onclick="weatherdata()">Next</button>
-    </div>
-    <br>
-    <div class="container">
-    <div id="text">
-        <h3 id="type"></h3>
-        <h3 id="first"></h3>
-        <h3 id="second"></h3>
-        <h3 id="third"></h3>
-        <h3 id="fourth"></h3>
-        <h3 id="fifth"></h3>
-        <h3 id="sixth"></h3>
-        <h3 id="seventh"></h3>
-    </div>
-    <img src="" id="image">
-    </div>
-    <img src="" id="image2">
-    <img src="" id="rain">
-    
-    <script>
-        async function weatherdata(){
+ async function weatherdata(){
 
             cityname=document.getElementById("city").value;
             APIkey=`5fc84481d6f2b6865126e89d7219c125`;
@@ -129,7 +94,3 @@
                 console.error(error);
             }
         }
-        
-    </script>
-</body>
-</html>
