@@ -53,7 +53,7 @@
                     document.getElementById("second").innerHTML=`Temperature: ${(data.main.temp-273.15).toFixed(2)}°C`;
                     document.getElementById("third").innerHTML=`Feels like: ${(data.main.feels_like-273.15).toFixed(2)}°C`;
                     document.getElementById("fourth").innerHTML=`Humidty: ${data.main.humidity}%`;
-                    document.getElementById("fifth").innerHTML=`Pressur: ${data.main.pressure} mb`;
+                    document.getElementById("fifth").innerHTML=`Pressure: ${data.main.pressure} mb`;
                     document.getElementById("sixth").innerHTML=`Maximum Temperature: ${(data.main.temp_max-273.15).toFixed(2)}°C`;
                     document.getElementById("seventh").innerHTML=`Minimum Temperature: ${(data.main.temp_min-273.15).toFixed(2)}°C`;
                 }
@@ -102,9 +102,8 @@
                         document.getElementById("rain").style.opacity="0.5";
                         display();
                         break;
-                    
-
                 };
+
                 console.log(data);
                 console.log(check);
             }catch(error){
