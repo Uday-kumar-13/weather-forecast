@@ -14,7 +14,7 @@
 }
 .title{
     color: white;
-    margin-left: 40%;
+    margin-left: 42%; 
 }
 @keyframes fadein{
     from{opacity: 0;}
@@ -49,7 +49,7 @@
     to{transform: translateX(-300%);}
 }
 @keyframes cloud2{
-    from{transform: translateX(400%);}
+    from{transform: translateX(300%);}
     to{transform: translateX(-100%);}
 }
 @keyframes cloud3{
@@ -75,7 +75,7 @@
     padding: 3%;
     padding-left: 6%;
     width: 22%;
-    margin-left: 38%;
+    margin-left: 36%;
     background-blend-mode:difference;
     border-radius: 20%;
 }

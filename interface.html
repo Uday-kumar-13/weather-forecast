@@ -45,6 +45,7 @@
                 let check=data.weather[0].main;
                 
                 function display(){
+                    /*document.getElementsByClassName("title").innerHTML="Weather Forecast";*/
                     document.getElementById("text").style.animation="data 3s 1";
                     document.getElementById("text").style.backgroundColor="rgb(163, 162, 162)";
                     document.getElementById("text").style.boxShadow="5px 5px rgb(98, 97, 97)";
@@ -102,11 +103,29 @@
                         document.getElementById("rain").style.opacity="0.5";
                         display();
                         break;
+                    case "Sunny":
+                        document.getElementById("image").src="";
+                        document.getElementById("image2").src="";
+                        document.getElementById("rain").src="";
+
+                        document.body.style.backgroundImage='url("OIP.webp")';
+                        display();
+
+                    default:
+                        
+                        document.getElementById("type").innerHTML="City Not Found! ";
+                        break;
                 };
 
                 console.log(data);
                 console.log(check);
             }catch(error){
+                /*const details=["first","second","third","fourth","fifth","sixth","seventh"];
+                document.getElementById(details.map(res=>{return res})).innerHTML="";*/
+                document.getElementById("type").style.color="white";
+                document.getElementById("type").style.fontSize="30px";
+                document.getElementById("type").style.backgroundColor="rgb(163, 162, 162)";
+                document.getElementById("type").innerHTML="City Not Found!";
                 console.error(error);
             }
         }
