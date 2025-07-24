@@ -8,14 +8,13 @@
                 const response=await fetch(targeturl);
                 const data=await response.json();
                 let check=data.weather[0].main;
-                
                 function display(){
-                    /*document.getElementsByClassName("title").innerHTML="Weather Forecast";*/
+    
                     document.getElementById("text").style.animation="data 3s 1";
                     document.getElementById("text").style.backgroundColor="rgb(163, 162, 162)";
                     document.getElementById("text").style.boxShadow="5px 5px rgb(98, 97, 97)";
                     document.getElementById("first").innerHTML=`Location: ${data.name}`;
-                    document.getElementById("type").innerHTML=`Sky: ${check}`;
+                    document.getElementById("type").innerHTML=`Sky: ${data.weather[0].main}`;
                     document.getElementById("second").innerHTML=`Temperature: ${(data.main.temp-273.15).toFixed(2)}°C`;
                     document.getElementById("third").innerHTML=`Feels like: ${(data.main.feels_like-273.15).toFixed(2)}°C`;
                     document.getElementById("fourth").innerHTML=`Humidty: ${data.main.humidity}%`;
@@ -75,6 +74,16 @@
 
                         document.body.style.backgroundImage='url("OIP.webp")';
                         display();
+                        break;
+
+                    case "Thunderstrom":
+                        document.getElementById("image").src="";
+                        document.getElementById("image2").src="";
+                        document.getElementById("rain").src="";
+
+                        document.body.style.backgroundImage='url("supercell-thunderstorm-texas.jpg")';
+                        display();
+                        break;
 
                     default:
                         
@@ -85,8 +94,11 @@
                 console.log(data);
                 console.log(check);
             }catch(error){
-                /*const details=["first","second","third","fourth","fifth","sixth","seventh"];
-                document.getElementById(details.map(res=>{return res})).innerHTML="";*/
+                const details=["first","second","third","fourth","fifth","sixth","seventh"];
+                for(i=0;i<details.length;i++)
+                {
+                    document.getElementById(details[i]).innerHTML="";
+                }
                 document.getElementById("type").style.color="white";
                 document.getElementById("type").style.fontSize="30px";
                 document.getElementById("type").style.backgroundColor="rgb(163, 162, 162)";
