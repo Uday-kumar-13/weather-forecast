@@ -57,7 +57,7 @@
     to{transform: translateX(-460%);}
 }
 @keyframes rain{
-    from{transform: translateY(-80%);}
+    from{transform: translateY(-30%);}
     to{transform: translateY(0%);}
 }
 @keyframes sun{

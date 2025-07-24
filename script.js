@@ -63,7 +63,7 @@
                         document.body.style.backgroundImage='url("rbloIJQ.jpg")';
                         document.getElementById("rain").style.width="100%";
                         document.getElementById("rain").src="rain drops.png";
-                        document.getElementById("rain").style.animation="rain 20s infinite";
+                        document.getElementById("rain").style.animation="rain 15s infinite";
                         document.getElementById("rain").style.opacity="0.5";
                         display();
                         break;
